@@ -1,0 +1,21 @@
+name: example
+pdf_dir: data/example
+run_dir: runs/example
+dpi: 144
+
+atlases:
+  - {id: book1, file: "<BOOK_1>.pdf", toc_level: 1}
+  - {id: book2, file: "<BOOK_2>.pdf", toc_level: null, ocr: vlm}
+
+prompts:
+  describe: "<DESCRIBE_PROMPT>"
+
+models:
+  layout: models/<LAYOUT_WEIGHTS>.pt
+  vlm: Qwen/Qwen3-VL-8B-Instruct
+  text: Qwen/Qwen3-Embedding-0.6B
+  image:
+    clip: ViT-L-14-quickgelu/openai
+    biomedclip: hf-hub:microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224
+    medsiglip: google/medsiglip-448
+    siglip2: google/siglip2-giant-opt-patch16-384

@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "figret"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.5",
+    "torchvision",
+    "transformers>=4.57",
+    "accelerate",
+    "pymupdf>=1.24",
+    "ultralytics>=8.3.78",
+    "rapidocr_onnxruntime",
+    "open_clip_torch",
+    "sentence-transformers>=3",
+    "bm25s",
+    "sentencepiece",
+    "pandas",
+    "pyarrow",
+    "numpy",
+    "pillow",
+    "pyyaml",
+]
+
+[project.scripts]
+figret = "figret.cli:main"
+
+[tool.setuptools]
+packages = ["figret"]
